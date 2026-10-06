@@ -1,0 +1,147 @@
+:root {
+    --bg: #f4f1e8;
+    --surface: #fbf8f1;
+    --text: #243126;
+    --muted: #5e6b61;
+    --accent: #4f7a57;
+    --accent-dark: #35533b;
+    --border: #d7d2c4;
+    --highlight: #dfe8d8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+    line-height: 1.6;
+}
+
+header {
+    margin-bottom: 48px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+nav div {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+a {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#home {
+    padding: 48px 0;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+#home h2 {
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+#home p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 28px;
+}
+
+#home a {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#home a:hover {
+    background-color: var(--accent-dark);
+    text-decoration: none;
+}
+
+section {
+    margin-bottom: 64px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+article {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+article h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 16px;
+    }
+
+    #home h1 {
+        font-size: 2.3rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav div {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
