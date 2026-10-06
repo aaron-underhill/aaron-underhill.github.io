@@ -66,11 +66,10 @@ a:hover {
     line-height: 1.1;
 }
 
-#home h2 {
+.hero-subtitle {
     font-size: 1.2rem;
     color: var(--muted);
     margin-bottom: 20px;
-    font-weight: normal;
 }
 
 #home p {
@@ -140,7 +139,7 @@ footer {
         align-items: flex-start;
     }
 
-    nav div {
+    .nav-links {
         flex-direction: column;
         gap: 8px;
     }
