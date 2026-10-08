@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Aaron Underhill | Computer Science</title>
 
@@ -21,16 +18,19 @@
 
         <nav>
 
-            <a href="#home">Aaron Underhill</a>
+            <a href="index.html">Aaron Underhill</a>
 
             <div class="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
             </div>
 
         </nav>
+
+        <button id="theme-toggle" type="button">
+            Tech Theme
+        </button>
 
     </header>
 
@@ -39,7 +39,9 @@
 
         <section id="home">
 
-            <h1>Aaron Underhill</h1>
+            <img class="hero-photo" src="images/aaron-headshot.jpg" alt="Portrait of Aaron Underhill">
+
+            <h1 id="hero-title">Aaron Underhill</h1>
 
             <p class="hero-subtitle">
                 Computer Science • Software Engineering • Data Science
@@ -51,55 +53,50 @@
                 create by combining technological progress with sustainability.
             </p>
 
-            <a href="#projects">View My Work</a>
+            <a href="#featured-projects">View My Work</a>
 
         </section>
 
 
-        <section id="projects">
+        <section id="featured-projects">
 
-            <h2>Projects</h2>
-
-            <article>
-
-                <h3>Portfolio Website</h3>
-
-                <p>
-                    A personal portfolio built from the ground up using HTML,
-                    CSS, JavaScript, Git, and GitHub Pages.
-                </p>
-
-                <p class="project-technologies">
-                    HTML • CSS • JavaScript • Git
-                </p>
-
-            </article>
+            <h2>Featured Projects</h2>
 
 
-            <article>
 
-                <h3>More Projects Coming Soon</h3>
+            <div class="project-grid">
 
-                <p>
-                    I'm currently building additional projects in software
-                    engineering, data science, and related areas.
-                </p>
+                <article class="project-card">
 
-            </article>
+                    <h3>Portfolio Website</h3>
 
-        </section>
+                    <p>
+                        A personal portfolio built from the ground up using HTML,
+                        CSS, JavaScript, Git, and GitHub Pages.
+                    </p>
+
+                    <p class="project-technologies">
+                        HTML • CSS • JavaScript • Git
+                    </p>
+
+                </article>
 
 
-        <section id="about">
+                <article class="project-card">
 
-            <h2>About Me</h2>
+                    <h3>More Projects Coming Soon</h3>
 
-            <p>
-                I'm a Computer Science graduate with a focus in Data Science.
-                I'm particularly interested in software engineering, data,
-                cybersecurity, sustainability, and emerging technologies such
-                as artificial intelligence.
-            </p>
+                    <p>
+                        I'm currently building additional projects in software
+                        engineering, data science, and related areas.
+                    </p>
+
+                </article>
+            </div>
+
+            <a href="projects.html" class="page-link">
+                View All My Projects Here!
+            </a>
 
         </section>
 
@@ -114,10 +111,28 @@
 
         </section>
 
+        <section class="about-preview">
+
+            <h2>A Little About Me</h2>
+
+            <p>
+                I'm a Computer Science graduate with a focus in Data Science,
+                interested in software engineering, sustainability, cybersecurity,
+                and emerging technologies.
+            </p>
+
+            <a href="about.html">
+                More About Me →
+            </a>
+
+        </section>
+
 
         <section id="contact">
 
             <h2>Contact</h2>
+
+            <p>Aaron Underhill</p>
 
             <p>
                 You can reach me at
@@ -126,11 +141,7 @@
                 </a>.
             </p>
 
-            <a
-                href="https://github.com/aaron-underhill"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <a href="https://github.com/aaron-underhill" target="_blank" rel="noopener noreferrer">
                 GitHub
             </a>
 
