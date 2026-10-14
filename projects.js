@@ -1,4 +1,6 @@
-
+/* =========================================================
+   PROJECT DATA
+   ========================================================= */
 
 const projects = [
 
@@ -36,14 +38,33 @@ const projects = [
 
 ];
 
+
+/* =========================================================
+   DOM REFERENCES
+   ========================================================= */
+
 const projectGrid =
     document.querySelector("#project-grid");
 
 const projectSearch =
     document.querySelector("#project-search");
 
+const filterButtons =
+    document.querySelectorAll(
+        ".project-filters button"
+    );
 
 
+/* =========================================================
+   APPLICATION STATE
+   ========================================================= */
+
+let selectedCategory = "All";
+
+
+/* =========================================================
+   CREATE ONE PROJECT CARD
+   ========================================================= */
 
 function createProjectCard(project) {
 
@@ -89,7 +110,9 @@ function createProjectCard(project) {
 }
 
 
-
+/* =========================================================
+   RENDER PROJECTS
+   ========================================================= */
 
 function renderProjects(projectsToRender) {
 
@@ -121,42 +144,109 @@ function renderProjects(projectsToRender) {
 }
 
 
-renderProjects(projects);
+/* =========================================================
+   SEARCH + CATEGORY FILTERING
+   ========================================================= */
+
+function updateProjects() {
+
+    const searchTerm =
+        projectSearch.value
+            .toLowerCase()
+            .trim();
 
 
+    const filteredProjects =
+        projects.filter(function (project) {
+
+            const searchableText =
+                (
+                    project.title +
+                    " " +
+                    project.description +
+                    " " +
+                    project.category +
+                    " " +
+                    project.technologies.join(" ")
+                ).toLowerCase();
+
+
+            const matchesSearch =
+                searchableText.includes(searchTerm);
+
+
+            const matchesCategory =
+                selectedCategory === "All" ||
+                project.category === selectedCategory;
+
+
+            return (
+                matchesSearch &&
+                matchesCategory
+            );
+        });
+
+
+    renderProjects(filteredProjects);
+}
+
+
+/* =========================================================
+   SEARCH EVENT
+   ========================================================= */
 
 projectSearch.addEventListener(
     "input",
-    function () {
-
-        const searchTerm =
-            projectSearch.value
-                .toLowerCase()
-                .trim();
-
-
-        const filteredProjects =
-            projects.filter(function (project) {
-
-                const searchableText =
-                    (
-                        project.title +
-                        " " +
-                        project.description +
-                        " " +
-                        project.category +
-                        " " +
-                        project.technologies.join(" ")
-                    ).toLowerCase();
-
-
-                return searchableText.includes(
-                    searchTerm
-                );
-            });
-
-
-        renderProjects(filteredProjects);
-    }
+    updateProjects
 );
 
+
+/* =========================================================
+   CATEGORY BUTTON EVENTS
+   ========================================================= */
+
+
+let selected = filterButtons[0];
+filterButtons[0].classList.add("selected");
+
+filterButtons.forEach(function (button) {
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            selectedCategory =
+                button.dataset.category;
+
+            button.classList.add("selected");
+            selected.classList.remove("selected");
+            selected = button;
+
+            button.classList.add("flash");
+
+            updateProjects();
+        }
+    );
+
+
+    button.addEventListener(
+        "animationend",
+        function (event) {
+
+            if (
+                event.animationName === "button-flash"
+            ) {
+                button.classList.remove("flash");
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   INITIAL RENDER
+   ========================================================= */
+
+updateProjects();
