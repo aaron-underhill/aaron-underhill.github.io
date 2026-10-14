@@ -1,0 +1,573 @@
+/* =========================================================
+   THEMES
+   ========================================================= */
+
+:root {
+    --bg: #f4f1e8;
+    --surface: #fbf8f1;
+    --text: #243126;
+    --muted: #5e6b61;
+    --accent: #4f7a57;
+    --accent-dark: #35533b;
+    --border: #d7d2c4;
+    --highlight: #dfe8d8;
+}
+
+:root.tech-theme {
+    --bg: #0b1110;
+    --surface: #111b18;
+    --text: #d8f3dc;
+    --muted: #8fa99a;
+    --accent: #42d392;
+    --accent-dark: #73f2b0;
+    --border: #29443a;
+    --highlight: #17382c;
+}
+
+:root.color-theme {
+    --bg: #17152b;
+    --surface: #252044;
+    --text: #f4f1ff;
+    --muted: #b8b3d6;
+
+    --accent: #7ee787;
+    --accent-dark: #9d7bff;
+
+    --border: #4b4570;
+    --highlight: #2e2a55;
+}
+
+
+/* =========================================================
+   COLOR THEME SPECIAL EFFECTS
+   ========================================================= */
+
+:root.color-theme #home a {
+    background: linear-gradient(0deg,
+            var(--accent),
+            var(--accent-dark));
+
+    transition:
+        transform 0.15s ease,
+        filter 0.2s ease;
+}
+
+:root.color-theme #home a:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+:root.color-theme #home a:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+/* =========================================================
+   GLOBAL / BASE STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: var(--bg);
+    color: var(--text);
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.page-link {
+    display: inline-block;
+
+    margin-top: 24px;
+
+    font-weight: bold;
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+   ========================================================= */
+
+header {
+    margin-bottom: 48px;
+}
+
+nav {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+#theme-toggle {
+    margin-top: 16px;
+
+    padding: 8px 14px;
+
+    background-color: transparent;
+    color: var(--accent-dark);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--highlight);
+}
+
+#theme-toggle:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+section {
+    margin-bottom: 64px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+article h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   HOME / HERO
+   ========================================================= */
+
+#home {
+    padding: 48px 0;
+
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 3rem;
+
+    margin-bottom: 12px;
+
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.1rem;
+
+    max-width: 700px;
+
+    margin-bottom: 28px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home a {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background-color: var(--accent);
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+#home a:hover {
+    background-color: var(--accent-dark);
+
+    text-decoration: none;
+}
+
+#hero-section {
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-photo {
+    display: inline-block;
+
+    width: 120px;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.project-card {
+    padding: 20px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   PROJECT SEARCH
+   ========================================================= */
+
+.project-tools {
+    margin-bottom: 32px;
+}
+
+.project-tools label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+#project-search {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 12px 14px;
+
+    font: inherit;
+
+    color: var(--text);
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   PROJECT FILTER BUTTONS
+   ========================================================= */
+
+
+.filter-label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.project-filters {
+    display: flex;
+
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-bottom: 32px;
+}
+
+.project-filters button {
+    position: relative;
+    overflow: hidden;
+
+    padding: 8px 14px;
+
+    font: inherit;
+
+    color: var(--text);
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.2s ease;
+}
+
+.project-filters button.selected {
+    border: 3px solid var(--accent);
+
+    color: var(--highlight);
+    background-color: var(--accent-dark);
+}
+
+.project-filters button:hover {
+    filter: brightness(1.3);
+
+    transform: translateY(-2px);
+}
+
+.project-filters button:active {
+    transform:
+        translateY(0) scale(0.97);
+}
+
+
+
+
+/* =========================================================
+   PROJECT FILTER RIPPLE / FLASH
+   ========================================================= */
+
+.project-filters button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: rgba(255, 255, 255, 0.6);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%) scale(0);
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.project-filters button.flash::after {
+    animation:
+        button-flash 0.45s ease-out;
+}
+
+@keyframes button-flash {
+    0% {
+        transform:
+            translate(-50%, -50%) scale(0);
+
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%) scale(20);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.about-layout {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 48px;
+
+    align-items: start;
+}
+
+.about-photo img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+
+    border-radius: 12px;
+}
+
+.hobbies-section h1 {
+
+    margin-top: 40px;
+    text-align: center;
+}
+
+.hobbies-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.hobbies-photo img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+
+    border-radius: 12px;
+}
+
+
+.background-section h1 {
+
+    margin-top: 40px;
+    text-align: center;
+}
+
+.background-layout {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.background-photo img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+
+    border-radius: 12px;
+}
+
+.background-section,
+.hobbies-section {
+    border-top: 1px solid var(--border);
+
+
+    margin: 24px 0;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE / MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 16px;
+    }
+
+    #home h1 {
+        font-size: 2.3rem;
+    }
+
+    nav {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-photo {
+        grid-row: 1;
+    }
+
+    .hobbies-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
