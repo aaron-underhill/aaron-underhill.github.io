@@ -23,12 +23,12 @@ function applyTheme(theme) {
 
     else if (theme === "tech") {
         document.documentElement.classList.add("tech-theme");
-        themeButton.textContent = "Color Theme";
+        themeButton.textContent = "Alt-Color Theme";
     }
 
     else if (theme === "color") {
         document.documentElement.classList.add("color-theme");
-        themeButton.textContent = "Earth Theme";
+        themeButton.textContent = "Default Theme";
     }
 }
 
