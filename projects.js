@@ -17,26 +17,43 @@ const projects = [
             "CSS",
             "JavaScript",
             "Git"
-        ]
+        ],
+
+        linkText: "You're already here!",
+
+        link: "index.html",
+
+        external: false
     },
 
 
     {
-        title: "Example Data Project",
+        title: "Unreal Coffee Database",
 
         description:
-            "A data analysis project exploring patterns in a real-world dataset.",
+            "A full-stack database application for managing customers, drinks, employees, orders, and related business data.",
 
-        category: "Data Science",
+        category: "Software Engineering",
 
         technologies: [
-            "Python",
-            "Pandas",
-            "Matplotlib"
-        ]
+            "JavaScript",
+            "Node.js",
+            "Express",
+            "Handlebars",
+            "Neon",
+            "PostgreSQL",
+            "CSS"
+        ],
+
+        linkText: "View Live Project",
+
+        link: "https://latte-larrys-database.vercel.app/",
+
+        external: true
     }
 
 ];
+
 
 
 /* =========================================================
@@ -55,11 +72,13 @@ const filterButtons =
     );
 
 
+
 /* =========================================================
    APPLICATION STATE
    ========================================================= */
 
 let selectedCategory = "All";
+
 
 
 /* =========================================================
@@ -99,15 +118,40 @@ function createProjectCard(project) {
         project.technologies.join(" • ");
 
 
+    const projectLink =
+        document.createElement("a");
+
+    projectLink.classList.add(
+        "project-link"
+    );
+
+    projectLink.textContent =
+        project.linkText;
+
+    projectLink.href =
+        project.link;
+
+
+    if (project.external) {
+
+        projectLink.target = "_blank";
+
+        projectLink.rel =
+            "noopener noreferrer";
+    }
+
+
     article.append(
         title,
         description,
-        technologies
+        technologies,
+        projectLink
     );
 
 
     return article;
 }
+
 
 
 /* =========================================================
@@ -142,6 +186,7 @@ function renderProjects(projectsToRender) {
 
     });
 }
+
 
 
 /* =========================================================
@@ -191,6 +236,7 @@ function updateProjects() {
 }
 
 
+
 /* =========================================================
    SEARCH EVENT
    ========================================================= */
@@ -201,13 +247,15 @@ projectSearch.addEventListener(
 );
 
 
+
 /* =========================================================
    CATEGORY BUTTON EVENTS
    ========================================================= */
 
-
 let selected = filterButtons[0];
+
 filterButtons[0].classList.add("selected");
+
 
 filterButtons.forEach(function (button) {
 
@@ -218,11 +266,16 @@ filterButtons.forEach(function (button) {
             selectedCategory =
                 button.dataset.category;
 
+
             button.classList.add("selected");
+
             selected.classList.remove("selected");
+
             selected = button;
 
+
             button.classList.add("flash");
+
 
             updateProjects();
         }
@@ -236,6 +289,7 @@ filterButtons.forEach(function (button) {
             if (
                 event.animationName === "button-flash"
             ) {
+
                 button.classList.remove("flash");
             }
 
@@ -243,6 +297,7 @@ filterButtons.forEach(function (button) {
     );
 
 });
+
 
 
 /* =========================================================
