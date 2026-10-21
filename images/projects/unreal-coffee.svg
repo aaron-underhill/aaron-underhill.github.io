@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t">
+  <title id="t">Database diagram for Unreal Coffee: employees and customers place orders, and each order links to drinks through an orders_drinks table</title>
+  <defs>
+    <style>
+      .box { fill: #fffaf3; stroke: #c9b49b; stroke-width: 1.5; }
+      .head { fill: #5b3a29; }
+      .name { font: 700 15px Georgia, 'Times New Roman', serif; fill: #fff6ea; }
+      .col { font: 12.5px Helvetica, Arial, sans-serif; fill: #4a3a30; }
+      .key { font: 700 10px Helvetica, Arial, sans-serif; fill: #b5653a; }
+      .line { stroke: #8a6a52; stroke-width: 2.5; fill: none; }
+      .card { font: 700 12px Helvetica, Arial, sans-serif; fill: #8a6a52; }
+    </style>
+  </defs>
+
+  <rect width="800" height="500" fill="#f1e9de"/>
+
+  <!-- relationships (drawn first, behind the tables) -->
+  <path class="line" d="M240 140 H300"/>
+  <text class="card" x="246" y="133">1</text>
+  <text class="card" x="284" y="133">N</text>
+
+  <path class="line" d="M560 140 H500"/>
+  <text class="card" x="547" y="133">1</text>
+  <text class="card" x="506" y="133">N</text>
+
+  <path class="line" d="M400 222 V300"/>
+  <text class="card" x="407" y="240">1</text>
+  <text class="card" x="407" y="292">N</text>
+
+  <path class="line" d="M560 360 H500"/>
+  <text class="card" x="547" y="353">1</text>
+  <text class="card" x="506" y="353">N</text>
+
+  <!-- employees -->
+  <g transform="translate(40 70)">
+    <rect class="box" width="200" height="122" rx="10"/>
+    <path class="head" d="M0 10 a10 10 0 0 1 10 -10 h180 a10 10 0 0 1 10 10 v24 h-200 z"/>
+    <text class="name" x="14" y="23">employees</text>
+    <text class="key" x="14" y="56">PK</text><text class="col" x="38" y="56">id_employee</text>
+    <text class="col" x="38" y="78">name</text>
+    <text class="col" x="38" y="100">email, phone_num</text>
+  </g>
+
+  <!-- customers -->
+  <g transform="translate(560 70)">
+    <rect class="box" width="200" height="122" rx="10"/>
+    <path class="head" d="M0 10 a10 10 0 0 1 10 -10 h180 a10 10 0 0 1 10 10 v24 h-200 z"/>
+    <text class="name" x="14" y="23">customers</text>
+    <text class="key" x="14" y="56">PK</text><text class="col" x="38" y="56">id_customer</text>
+    <text class="col" x="38" y="78">name</text>
+    <text class="col" x="38" y="100">email, phone_num</text>
+  </g>
+
+  <!-- orders -->
+  <g transform="translate(300 56)">
+    <rect class="box" width="200" height="166" rx="10"/>
+    <path class="head" d="M0 10 a10 10 0 0 1 10 -10 h180 a10 10 0 0 1 10 10 v24 h-200 z"/>
+    <text class="name" x="14" y="23">orders</text>
+    <text class="key" x="14" y="56">PK</text><text class="col" x="38" y="56">id_order</text>
+    <text class="key" x="14" y="78">FK</text><text class="col" x="38" y="78">id_employee</text>
+    <text class="key" x="14" y="100">FK</text><text class="col" x="38" y="100">id_customer</text>
+    <text class="col" x="38" y="122">total_price</text>
+    <text class="col" x="38" y="144">order_date</text>
+  </g>
+
+  <!-- orders_drinks -->
+  <g transform="translate(300 300)">
+    <rect class="box" width="200" height="144" rx="10"/>
+    <path class="head" d="M0 10 a10 10 0 0 1 10 -10 h180 a10 10 0 0 1 10 10 v24 h-200 z"/>
+    <text class="name" x="14" y="23">orders_drinks</text>
+    <text class="key" x="14" y="56">PK</text><text class="col" x="38" y="56">id_order_drink</text>
+    <text class="key" x="14" y="78">FK</text><text class="col" x="38" y="78">id_order</text>
+    <text class="key" x="14" y="100">FK</text><text class="col" x="38" y="100">id_drink</text>
+    <text class="col" x="38" y="122">quantity, drink_total</text>
+  </g>
+
+  <!-- drinks -->
+  <g transform="translate(560 300)">
+    <rect class="box" width="200" height="122" rx="10"/>
+    <path class="head" d="M0 10 a10 10 0 0 1 10 -10 h180 a10 10 0 0 1 10 10 v24 h-200 z"/>
+    <text class="name" x="14" y="23">drinks</text>
+    <text class="key" x="14" y="56">PK</text><text class="col" x="38" y="56">id_drink</text>
+    <text class="col" x="38" y="78">name, description</text>
+    <text class="col" x="38" y="100">price</text>
+  </g>
+
+  <!-- caption -->
+  <text x="40" y="358" style="font: 700 30px Georgia, 'Times New Roman', serif; fill: #3d2a1f;">Unreal</text>
+  <text x="40" y="394" style="font: 700 30px Georgia, 'Times New Roman', serif; fill: #3d2a1f;">Coffee</text>
+  <text x="40" y="424" style="font: 13px Helvetica, Arial, sans-serif; fill: #7a6455;">Relational schema</text>
+  <text x="40" y="443" style="font: 13px Helvetica, Arial, sans-serif; fill: #7a6455;">PostgreSQL</text>
+</svg>

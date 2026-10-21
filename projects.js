@@ -155,9 +155,9 @@ const projects = [
     {
         title: "Unreal Coffee Database",
 
-        image: "images/projects/unreal-coffee.jpg",
+        image: "images/projects/unreal-coffee.svg",
 
-        imageAlt: "Unreal Coffee storefront on a tree-lined street",
+        imageAlt: "Database diagram: employees and customers place orders, and each order links to drinks through an orders_drinks table",
 
         description:
             "A full-stack database application for managing customers, drinks, employees, orders, and related business data.",
