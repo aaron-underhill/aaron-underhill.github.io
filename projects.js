@@ -59,6 +59,31 @@ const projects = [
 
 
     {
+        title: "Higher or Lower: Movie Ratings Edition",
+
+        description:
+            "An Android game where players guess which of two movies is rated higher, using live data from The Movie Database API. On a four-person team, I designed the game screen with movie posters, built the movie details screen with embedded YouTube trailers, added animated posters to the home screen, and redesigned the scoreboard for a consistent look.",
+
+        category: "Software Engineering",
+
+        technologies: [
+            "Kotlin",
+            "Android",
+            "Retrofit",
+            "Room",
+            "TMDB API",
+            "YouTube IFrame API"
+        ],
+
+        linkText: "View on GitHub",
+
+        link: "https://github.com/osu-cs492-w26/final-project-cs492-team10",
+
+        external: true
+    },
+
+
+    {
         title: "Portfolio Website",
 
         description:
