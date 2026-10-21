@@ -357,6 +357,12 @@ article h3 {
 }
 
 
+/* Space between two buttons on the same card */
+.project-link + .project-link {
+    margin-left: 10px;
+}
+
+
 
 /* =========================================================
    PROJECT SEARCH

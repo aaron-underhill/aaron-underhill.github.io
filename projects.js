@@ -27,7 +27,9 @@ const projects = [
 
         link: "mailto:aaron.m.underhill@gmail.com?subject=IsaacBot%20demo%20request",
 
-        external: false
+        external: false,
+
+        codeLink: "https://github.com/aaron-underhill/isaacbot"
     },
 
 
@@ -204,6 +206,31 @@ function createProjectCard(project) {
     if (project.link) {
 
         article.append(projectLink);
+    }
+
+
+    // Optional second button for projects with public source code.
+    if (project.codeLink) {
+
+        const codeLink =
+            document.createElement("a");
+
+        codeLink.classList.add(
+            "project-link"
+        );
+
+        codeLink.textContent =
+            "View Code";
+
+        codeLink.href =
+            project.codeLink;
+
+        codeLink.target = "_blank";
+
+        codeLink.rel =
+            "noopener noreferrer";
+
+        article.append(codeLink);
     }
 
 
