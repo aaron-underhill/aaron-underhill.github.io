@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t">
+  <title id="t">Diagram: e-bikes on a street map within a 3 minute walk of home, and a phone notification saying only 2 bikes are nearby</title>
+  <rect width="800" height="500" fill="#e9efe6"/>
+
+  <!-- street grid -->
+  <g stroke="#ffffff" stroke-width="18">
+    <line x1="0" y1="110" x2="520" y2="110"/>
+    <line x1="0" y1="250" x2="520" y2="250"/>
+    <line x1="0" y1="390" x2="520" y2="390"/>
+    <line x1="90" y1="0" x2="90" y2="500"/>
+    <line x1="260" y1="0" x2="260" y2="500"/>
+    <line x1="430" y1="0" x2="430" y2="500"/>
+  </g>
+
+  <!-- 3 minute walk radius -->
+  <circle cx="260" cy="250" r="125" fill="#4f7a57" fill-opacity="0.12" stroke="#4f7a57" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="260" y="108" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#35533b">3 min walk</text>
+
+  <!-- home -->
+  <g transform="translate(260 250)">
+    <circle r="30" fill="#35533b"/>
+    <path d="M-14 4 L0 -12 L14 4 L14 16 L-14 16 Z" fill="#ffffff"/>
+    <rect x="-4" y="6" width="8" height="10" fill="#35533b"/>
+  </g>
+
+  <!-- bikes: two inside, three outside -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <g fill="#4f7a57">
+      <circle cx="330" cy="200" r="15"/>
+      <circle cx="190" cy="318" r="15"/>
+    </g>
+    <g fill="#9aa79c">
+      <circle cx="470" cy="80" r="13"/>
+      <circle cx="60" cy="420" r="13"/>
+      <circle cx="470" cy="430" r="13"/>
+    </g>
+  </g>
+
+  <!-- phone notification -->
+  <g transform="translate(565 85)">
+    <rect width="190" height="330" rx="30" fill="#2f3b33"/>
+    <rect x="10" y="12" width="170" height="306" rx="22" fill="#f6f3ea"/>
+    <rect x="70" y="22" width="50" height="10" rx="5" fill="#2f3b33"/>
+    <text x="95" y="82" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="300" fill="#2f3b33">2:00</text>
+    <rect x="18" y="112" width="154" height="98" rx="14" fill="#ffffff" stroke="#d7d2c4"/>
+    <circle cx="34" cy="134" r="8" fill="#e0b042"/>
+    <text x="48" y="139" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2f3b33">Only 2 bikes nearby</text>
+    <text x="28" y="162" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#55615a">2 e-bikes within a 3 min</text>
+    <text x="28" y="178" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#55615a">walk. Nearest is about</text>
+    <text x="28" y="194" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#55615a">2 min away.</text>
+  </g>
+</svg>
