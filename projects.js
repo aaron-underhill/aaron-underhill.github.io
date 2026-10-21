@@ -34,6 +34,30 @@ const projects = [
 
 
     {
+        title: "Biketown Alert",
+
+        description:
+            "I get around Portland on Biketown e-bikes, and sometimes the closest one is 10+ minutes away instead of the usual one or two. I'd only find out as I was walking out the door, and end up late for work. So I built a tool to fix it: about an hour before each shift, it checks Biketown's live data every 5 minutes and sends a push notification to my phone telling me whether there are plenty of bikes, only a few, or none nearby, and updates me only if that changes. Tapping the alert opens walking directions to the nearest bike. It runs for free on GitHub Actions, keeps my location and schedule private as encrypted secrets, logs every check for later analysis, and has automated tests that run on every push.",
+
+        category: "Software Engineering",
+
+        technologies: [
+            "Python",
+            "GitHub Actions",
+            "GBFS API",
+            "Push Notifications",
+            "CI / Unit Testing"
+        ],
+
+        linkText: "View on GitHub",
+
+        link: "https://github.com/aaron-underhill/biketown-alert",
+
+        external: true
+    },
+
+
+    {
         title: "Food Hero Calculator (OSU Capstone)",
 
         description:
