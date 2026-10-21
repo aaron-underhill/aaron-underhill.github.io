@@ -35,7 +35,7 @@ const projects = [
 
         external: false,
 
-        codeLink: "https://github.com/aaron-underhill/isaacbot"
+        github: "https://github.com/aaron-underhill/isaacbot"
     },
 
 
@@ -61,11 +61,7 @@ const projects = [
             "CI / Unit Testing"
         ],
 
-        linkText: "View on GitHub",
-
-        link: "https://github.com/aaron-underhill/biketown-alert",
-
-        external: true
+        github: "https://github.com/aaron-underhill/biketown-alert"
     },
 
 
@@ -76,7 +72,7 @@ const projects = [
 
         image: "images/projects/food-hero.jpg",
 
-        imageAlt: "Food Calculator home screen with cartoon fruits, vegetables, and snacks",
+        imageAlt: "Food Hero Calculator page: a grid of foods to pick from and a My Calculator panel with Compare and Calculate buttons",
 
         description:
             "An educational web app that teaches kids in grades 3–8 how food choices affect nutrition and the planet, combining nutrition facts with carbon and water footprints. On a six-person team, I built the landing page and results features, integrated the food data, and handled deployment.",
@@ -96,7 +92,9 @@ const projects = [
 
         link: "https://healthy-games-for-healthy-people-an-xi.vercel.app/",
 
-        external: true
+        external: true,
+
+        github: "https://github.com/tarynlucia/healthy-games-for-healthy-people-and-healthy-planet"
     },
 
 
@@ -121,11 +119,7 @@ const projects = [
             "YouTube IFrame API"
         ],
 
-        linkText: "View on GitHub",
-
-        link: "https://github.com/osu-cs492-w26/final-project-cs492-team10",
-
-        external: true
+        github: "https://github.com/osu-cs492-w26/final-project-cs492-team10"
     },
 
 
@@ -152,7 +146,9 @@ const projects = [
 
         link: "index.html",
 
-        external: false
+        external: false,
+
+        github: "https://github.com/aaron-underhill/aaron-underhill.github.io"
     },
 
 
@@ -182,7 +178,9 @@ const projects = [
 
         link: "https://latte-larrys-database.vercel.app/",
 
-        external: true
+        external: true,
+
+        github: "https://github.com/aaron-underhill/latte-larrys-database"
     }
 
 ];
@@ -313,28 +311,29 @@ function createProjectCard(project) {
     }
 
 
-    // Optional second button for projects with public source code.
-    if (project.codeLink) {
+    // Every project with a public repository gets the same GitHub button.
+    if (project.github) {
 
-        const codeLink =
+        const githubLink =
             document.createElement("a");
 
-        codeLink.classList.add(
-            "project-link"
+        githubLink.classList.add(
+            "project-link",
+            "project-link-secondary"
         );
 
-        codeLink.textContent =
-            "View Code";
+        githubLink.textContent =
+            "View on GitHub";
 
-        codeLink.href =
-            project.codeLink;
+        githubLink.href =
+            project.github;
 
-        codeLink.target = "_blank";
+        githubLink.target = "_blank";
 
-        codeLink.rel =
+        githubLink.rel =
             "noopener noreferrer";
 
-        links.append(codeLink);
+        links.append(githubLink);
     }
 
 

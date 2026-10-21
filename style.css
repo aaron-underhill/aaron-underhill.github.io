@@ -350,6 +350,21 @@ article h3 {
 }
 
 
+/* Outlined style for "View on GitHub", so it reads as the secondary action */
+.project-link.project-link-secondary {
+    background-color: transparent;
+    color: var(--accent);
+
+    box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+
+.project-link.project-link-secondary:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+
 /* Picture across the top of a project card, edge to edge */
 .project-image {
     display: block;
