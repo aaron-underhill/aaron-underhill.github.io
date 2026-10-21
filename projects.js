@@ -5,6 +5,57 @@
 const projects = [
 
     {
+        title: "IsaacBot",
+
+        description:
+            "A retrieval-augmented chatbot that recreates my twin brother's texting style from about 46,000 of our messages. I built the cleaning and sessionization pipeline, a session-level train/validation/test split, an embedding index with cosine-similarity retrieval, and an evaluation suite comparing response length, emoji use, and semantic similarity.",
+
+        category: "Data Science",
+
+        technologies: [
+            "Python",
+            "OpenAI API",
+            "Embeddings",
+            "RAG",
+            "NumPy",
+            "Streamlit"
+        ],
+
+        // Add the Streamlit URL here to show a "Try the Demo" link.
+        linkText: "Try the Demo",
+
+        link: "",
+
+        external: true
+    },
+
+
+    {
+        title: "Food Hero Calculator (OSU Capstone)",
+
+        description:
+            "An educational web app that teaches kids in grades 3–8 how food choices affect nutrition and the planet, combining nutrition facts with carbon and water footprints. On a six-person team, I built the landing page and results features, integrated the food data, and handled deployment.",
+
+        category: "Software Engineering",
+
+        technologies: [
+            "Next.js",
+            "React",
+            "JavaScript",
+            "Tailwind CSS",
+            "Supabase",
+            "Vercel"
+        ],
+
+        linkText: "View on GitHub",
+
+        link: "https://github.com/tarynlucia/healthy-games-for-healthy-people-and-healthy-planet",
+
+        external: true
+    },
+
+
+    {
         title: "Portfolio Website",
 
         description:
@@ -144,9 +195,15 @@ function createProjectCard(project) {
     article.append(
         title,
         description,
-        technologies,
-        projectLink
+        technologies
     );
+
+
+    // Only show the link once the project has one.
+    if (project.link) {
+
+        article.append(projectLink);
+    }
 
 
     return article;
