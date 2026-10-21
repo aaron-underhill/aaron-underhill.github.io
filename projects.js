@@ -21,12 +21,13 @@ const projects = [
             "Streamlit"
         ],
 
-        // Add the Streamlit URL here to show a "Try the Demo" link.
-        linkText: "Try the Demo",
+        // The live app (isaacbot.streamlit.app) is invite-only because it is
+        // built on private messages, so visitors request access by email.
+        linkText: "Live Demo Available on Request",
 
-        link: "",
+        link: "mailto:aaron.m.underhill@gmail.com?subject=IsaacBot%20demo%20request",
 
-        external: true
+        external: false
     },
 
 
