@@ -334,6 +334,22 @@ article h3 {
 }
 
 
+/* Small status note on a card, e.g. a live demo that is temporarily down */
+.project-card .project-note {
+    padding: 10px 12px;
+
+    font-size: 0.85rem;
+    line-height: 1.45;
+
+    color: var(--muted);
+
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+
+    background-color: var(--highlight);
+}
+
+
 /* Button row: pushed to the bottom so buttons line up across cards */
 .project-links {
     display: flex;

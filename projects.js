@@ -88,6 +88,10 @@ const projects = [
             "Vercel"
         ],
 
+        // Shown under the description as a status note.
+        note:
+            "Heads up: the food data lives in our project partner's database, which is currently offline, so the live calculator may not load foods right now. The full code is on GitHub.",
+
         linkText: "View Live Project",
 
         link: "https://healthy-games-for-healthy-people-an-xi.vercel.app/",
@@ -295,6 +299,21 @@ function createProjectCard(project) {
         description,
         technologies
     );
+
+
+    // Optional status note, such as a live demo being temporarily down.
+    if (project.note) {
+
+        const note =
+            document.createElement("p");
+
+        note.classList.add("project-note");
+
+        note.textContent =
+            project.note;
+
+        article.append(note);
+    }
 
 
     // Buttons share one row, pinned to the bottom of the card.
