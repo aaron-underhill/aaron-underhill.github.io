@@ -47,9 +47,9 @@ const projects = [
             "Vercel"
         ],
 
-        linkText: "View on GitHub",
+        linkText: "View Live Project",
 
-        link: "https://github.com/tarynlucia/healthy-games-for-healthy-people-and-healthy-planet",
+        link: "https://healthy-games-for-healthy-people-an-xi.vercel.app/",
 
         external: true
     },
