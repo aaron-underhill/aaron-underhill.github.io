@@ -122,6 +122,13 @@ a:hover {
 }
 
 
+/* Contact links (email and GitHub) match the other bold links. */
+#contact a {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+
 
 /* =========================================================
    HEADER / NAVIGATION
