@@ -742,10 +742,90 @@ article h3 {
 
 
 .background-section,
+.osu-section,
 .hobbies-section {
     border-top: 1px solid var(--border);
 
     margin: 24px 0;
+}
+
+
+/* =========================================================
+   MY TIME AT OREGON STATE
+   ========================================================= */
+
+.osu-section h1 {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+
+.osu-layout {
+    display: grid;
+
+    grid-template-columns: 2fr 1.5fr;
+
+    gap: 48px;
+
+    align-items: start;
+}
+
+
+.osu-text h2 {
+    margin-top: 32px;
+}
+
+
+.osu-article-link {
+    display: inline-block;
+
+    margin-top: 4px;
+
+    font-weight: bold;
+}
+
+
+.osu-classes {
+    padding-left: 20px;
+
+    line-height: 1.6;
+}
+
+
+.osu-classes li {
+    margin-bottom: 10px;
+}
+
+
+.osu-photo {
+    margin: 0;
+
+    /* Keeps the photo in view while reading the longer text beside it */
+    position: sticky;
+    top: 24px;
+}
+
+
+.osu-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 12px;
+}
+
+
+.osu-photo figcaption {
+    margin-top: 10px;
+
+    font-size: 0.9rem;
+    line-height: 1.45;
+
+    color: var(--muted);
+
+    text-align: center;
 }
 
 
@@ -803,6 +883,21 @@ footer {
 
 
     .about-photo {
+        grid-row: 1;
+    }
+
+
+    .background-layout,
+    .osu-layout {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+    }
+
+
+    .osu-photo {
+        position: static;
+
         grid-row: 1;
     }
 
