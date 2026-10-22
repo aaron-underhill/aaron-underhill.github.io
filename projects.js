@@ -9,9 +9,9 @@ const projects = [
 
         featured: true,
 
-        image: "images/projects/isaacbot.svg",
+        image: "images/projects/isaacbot.jpg",
 
-        imageAlt: "Diagram of how IsaacBot works: message history, finding similar past chats, and replying in the same style",
+        imageAlt: "IsaacBot chat: asked whether to buy a used or new bike, it answers in casual texting style, and when asked if it is really Isaac it says it is a simulation",
 
         description:
             "A retrieval-augmented chatbot that recreates my twin brother's texting style from about 46,000 of our messages. I built the cleaning and sessionization pipeline, a session-level train/validation/test split, an embedding index with cosine-similarity retrieval, and an evaluation suite comparing response length, emoji use, and semantic similarity.",
