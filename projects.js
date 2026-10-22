@@ -16,7 +16,7 @@ const projects = [
         description:
             "A retrieval-augmented chatbot that recreates my twin brother's texting style from about 46,000 of our messages, and can reply out loud in his voice, cloned with ElevenLabs with his permission. I built the cleaning and sessionization pipeline, a session-level train/validation/test split, an embedding index with cosine-similarity retrieval, and an evaluation suite comparing response length, emoji use, and semantic similarity.",
 
-        category: "Data Science",
+        category: "Data and AI",
 
         technologies: [
             "Python",
@@ -52,7 +52,7 @@ const projects = [
         description:
             "I commute on Biketown e-bikes, and every so often the nearest one is 10+ minutes away instead of the usual one or two. I would only notice on my way out the door, and end up late for work. So I built a fix: an hour before each shift, it checks Biketown's live data and alerts my phone whether there are plenty of bikes nearby, only a few, or none, then updates me only if that changes. It runs free on GitHub Actions with automated tests on every push.",
 
-        category: "Software Engineering",
+        category: "Data and AI",
 
         technologies: [
             "Python",
@@ -78,7 +78,7 @@ const projects = [
         description:
             "An educational web app that teaches kids in grades 3–8 how food choices affect nutrition and the planet, combining nutrition facts with carbon and water footprints. On a six-person team, I built the landing page and results features, integrated the food data, and handled deployment.",
 
-        category: "Software Engineering",
+        category: "Web Apps",
 
         technologies: [
             "Next.js",
@@ -113,7 +113,7 @@ const projects = [
         description:
             "An Android game where players guess which of two movies is rated higher, using live data from The Movie Database API. On a four-person team, I designed the game screen with movie posters, built the movie details screen with embedded YouTube trailers, added animated posters to the home screen, and redesigned the scoreboard for a consistent look.",
 
-        category: "Software Engineering",
+        category: "Mobile",
 
         technologies: [
             "Kotlin",
@@ -138,7 +138,7 @@ const projects = [
         description:
             "A personal portfolio built from scratch to showcase my projects, skills, and development work.",
 
-        category: "Software Engineering",
+        category: "Web Apps",
 
         technologies: [
             "HTML",
@@ -167,7 +167,7 @@ const projects = [
         description:
             "A full-stack database application for managing customers, drinks, employees, orders, and related business data.",
 
-        category: "Software Engineering",
+        category: "Web Apps",
 
         technologies: [
             "JavaScript",
