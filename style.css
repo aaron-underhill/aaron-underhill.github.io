@@ -215,6 +215,30 @@ article h3 {
 }
 
 
+/* Skills on the homepage: one labeled group per category. */
+.skill-group {
+    margin-bottom: 18px;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.skill-group h3 {
+    margin: 0 0 4px;
+
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--accent);
+}
+
+.skill-group p {
+    margin: 0;
+}
+
+
 
 /* =========================================================
    HOME / HERO
