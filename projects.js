@@ -106,9 +106,9 @@ const projects = [
     {
         title: "Higher or Lower: Movie Ratings Edition",
 
-        image: "images/projects/higher-or-lower.svg",
+        image: "images/projects/higher-or-lower.jpg",
 
-        imageAlt: "Diagram of the game: two movie posters side by side, guess which is rated higher",
+        imageAlt: "Three screens from the Higher or Lower Android app: the home screen, a round comparing two movies with their ratings and the current score, and a movie details page with an embedded YouTube trailer",
 
         description:
             "An Android game where players guess which of two movies is rated higher, using live data from The Movie Database API. On a four-person team, I designed the game screen with movie posters, built the movie details screen with embedded YouTube trailers, added animated posters to the home screen, and redesigned the scoreboard for a consistent look.",
