@@ -14,7 +14,7 @@ const projects = [
         imageAlt: "IsaacBot chat: asked whether to buy a used or new bike, it answers in casual texting style, and when asked if it is really Isaac it says it is a simulation",
 
         description:
-            "A retrieval-augmented chatbot that recreates my twin brother's texting style from about 46,000 of our messages. I built the cleaning and sessionization pipeline, a session-level train/validation/test split, an embedding index with cosine-similarity retrieval, and an evaluation suite comparing response length, emoji use, and semantic similarity.",
+            "A retrieval-augmented chatbot that recreates my twin brother's texting style from about 46,000 of our messages, and can reply out loud in his voice, cloned with ElevenLabs with his permission. I built the cleaning and sessionization pipeline, a session-level train/validation/test split, an embedding index with cosine-similarity retrieval, and an evaluation suite comparing response length, emoji use, and semantic similarity.",
 
         category: "Data Science",
 
@@ -24,7 +24,8 @@ const projects = [
             "Embeddings",
             "RAG",
             "NumPy",
-            "Streamlit"
+            "Streamlit",
+            "ElevenLabs"
         ],
 
         // The live app (isaacbot.streamlit.app) is invite-only because it is
