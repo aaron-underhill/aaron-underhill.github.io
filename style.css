@@ -790,12 +790,31 @@ article h3 {
 }
 
 
-.background-photo img {
-    width: 100%;
+.background-photo {
+    margin: 0;
     max-width: 500px;
+}
+
+
+.background-photo img {
+    display: block;
+
+    width: 100%;
     height: auto;
 
     border-radius: 12px;
+}
+
+
+.background-photo figcaption {
+    margin-top: 10px;
+
+    font-size: 0.9rem;
+    line-height: 1.45;
+
+    color: var(--muted);
+
+    text-align: center;
 }
 
 
@@ -863,10 +882,6 @@ article h3 {
 
 .osu-photo {
     margin: 0;
-
-    /* Keeps the photo in view while reading the longer text beside it */
-    position: sticky;
-    top: 24px;
 }
 
 
