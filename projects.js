@@ -16,7 +16,7 @@ const projects = [
         imageAlt: "Chess Analysis dashboard: 1,768 games and a 49.7% win rate, ratings for bullet, blitz, and rapid, and my best and toughest openings as White and as Black",
 
         description:
-            "A Django web app that imports all of my Chess.com games and shows where I win, where I lose, and why: my best and toughest openings as each color, rating over time, and how my games end. It pulls new games daily from Chess.com's API, stores them in Postgres, and serves the same stats as a JSON API. Next up: Stockfish analysis to pinpoint the moves where games slip away.",
+            "A Django web app that imports all of my Chess.com games and shows where I win, where I lose, and why: my best and toughest openings as each color, rating over time, and how my games end. It pulls new games daily from Chess.com's API, stores them in Postgres, and serves the same stats as a JSON API. I plan to add Stockfish analysis to show me where I tend to make blunders in my games.",
 
         // Shows up under both filters.
         category: ["Web Apps", "Data and AI"],
