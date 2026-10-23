@@ -5,9 +5,47 @@
 const projects = [
 
     {
+        title: "Chess Analysis",
+
+        featured: true,
+
+        origin: "Personal",
+
+        image: "images/projects/chess-analysis.jpg",
+
+        imageAlt: "Chess Analysis dashboard: 1,768 games and a 49.7% win rate, ratings for bullet, blitz, and rapid, and my best and toughest openings as White and as Black",
+
+        description:
+            "A Django web app that imports all of my Chess.com games and shows where I win, where I lose, and why: my best and toughest openings as each color, rating over time, and how my games end. It pulls new games daily from Chess.com's API, stores them in Postgres, and serves the same stats as a JSON API. Next up: Stockfish analysis to pinpoint the moves where games slip away.",
+
+        // Shows up under both filters.
+        category: ["Web Apps", "Data and AI"],
+
+        technologies: [
+            "Python",
+            "Django",
+            "PostgreSQL",
+            "REST API",
+            "Vercel",
+            "GitHub Actions"
+        ],
+
+        linkText: "View Live Project",
+
+        link: "https://chess-analysis-inky.vercel.app/",
+
+        external: true,
+
+        github: "https://github.com/aaron-underhill/chess-analysis"
+    },
+
+
+    {
         title: "IsaacBot",
 
         featured: true,
+
+        origin: "Personal",
 
         image: "images/projects/isaacbot.jpg",
 
@@ -43,7 +81,9 @@ const projects = [
     {
         title: "Biketown Alert",
 
-        featured: true,
+        featured: false,
+
+        origin: "Personal",
 
         image: "images/projects/biketown-alert.svg",
 
@@ -70,6 +110,10 @@ const projects = [
         title: "Food Hero Calculator (OSU Capstone)",
 
         featured: true,
+
+        origin: "Academic",
+
+        originDetail: "Senior Capstone",
 
         image: "images/projects/food-hero.jpg",
 
@@ -106,6 +150,10 @@ const projects = [
     {
         title: "Higher or Lower: Movie Ratings Edition",
 
+        origin: "Academic",
+
+        originDetail: "Mobile Development",
+
         image: "images/projects/higher-or-lower.jpg",
 
         imageAlt: "Three screens from the Higher or Lower Android app: the home screen, a round comparing two movies with their ratings and the current score, and a movie details page with an embedded YouTube trailer",
@@ -130,6 +178,8 @@ const projects = [
 
     {
         title: "Portfolio Website",
+
+        origin: "Personal",
 
         image: "images/projects/portfolio.jpg",
 
@@ -159,6 +209,10 @@ const projects = [
 
     {
         title: "Unreal Coffee Database",
+
+        origin: "Academic",
+
+        originDetail: "Databases",
 
         image: "images/projects/unreal-coffee.svg",
 
@@ -221,6 +275,12 @@ let selectedCategory = "All";
    CREATE ONE PROJECT CARD
    ========================================================= */
 
+// A project's category can be one name or a list of names.
+function categoriesOf(project) {
+
+    return [].concat(project.category);
+}
+
 function createProjectCard(project) {
 
     const article =
@@ -244,6 +304,25 @@ function createProjectCard(project) {
         image.loading = "lazy";
 
         article.append(image);
+    }
+
+
+    // Small label: was this a class project or something I built on my own?
+    if (project.origin) {
+
+        const origin =
+            document.createElement("span");
+
+        origin.classList.add(
+            "project-origin",
+            "project-origin-" + project.origin.toLowerCase()
+        );
+
+        origin.textContent = project.originDetail
+            ? project.origin + " · " + project.originDetail
+            : project.origin;
+
+        article.append(origin);
     }
 
 
@@ -424,7 +503,9 @@ function updateProjects() {
                     " " +
                     project.description +
                     " " +
-                    project.category +
+                    categoriesOf(project).join(" ") +
+                    " " +
+                    (project.origin || "") +
                     " " +
                     project.technologies.join(" ")
                 ).toLowerCase();
@@ -436,7 +517,7 @@ function updateProjects() {
 
             const matchesCategory =
                 selectedCategory === "All" ||
-                project.category === selectedCategory;
+                categoriesOf(project).includes(selectedCategory);
 
 
             return (
