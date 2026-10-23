@@ -843,9 +843,29 @@ article h3 {
 
     grid-template-columns: 2fr 1.5fr;
 
-    gap: 48px;
+    column-gap: 48px;
+    row-gap: 0;
 
     align-items: start;
+}
+
+
+.osu-text {
+    grid-column: 1;
+}
+
+
+.osu-capstone-text {
+    grid-row: 2;
+}
+
+
+/* Sits beside the Senior Capstone subsection */
+.osu-photo {
+    grid-column: 2;
+    grid-row: 2;
+
+    margin: 32px 0 0;
 }
 
 
@@ -877,11 +897,6 @@ article h3 {
 
 .osu-focus-intro {
     margin-bottom: 8px;
-}
-
-
-.osu-photo {
-    margin: 0;
 }
 
 
@@ -973,10 +988,15 @@ footer {
     }
 
 
+    .osu-text,
     .osu-photo {
-        position: static;
+        grid-column: 1;
+        grid-row: auto;
+    }
 
-        grid-row: 1;
+
+    .osu-photo {
+        margin-top: 24px;
     }
 
 }
