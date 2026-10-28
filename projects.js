@@ -79,6 +79,41 @@ const projects = [
 
 
     {
+        title: "Job Search Agent",
+
+        featured: false,
+
+        origin: "Personal",
+
+        image: "images/projects/job-search-agent.jpg",
+
+        imageAlt: "Job Search Agent dashboard in dark mode: the Matches page with score tier filters and a line cook job scored 84, Strong",
+
+        description:
+            "An AI agent pipeline I designed and built with Claude to run my own job search. Every hour, an agent searches job boards and my job-alert emails, filters out roles I can't realistically get, and scores each one 0–100 on how likely I am to land it, then alerts my phone when a good one is posted that day. A dashboard tracks every job and application, and one click starts a second agent that tailors my resume and cover letter to the posting without claiming anything I haven't done. The demo runs on sample data for a fictional line cook.",
+
+        category: ["Web Apps", "Data and AI"],
+
+        technologies: [
+            "AI Agents",
+            "Claude",
+            "JavaScript",
+            "pdf-lib",
+            "Google Sheets",
+            "Gmail"
+        ],
+
+        linkText: "View Live Demo",
+
+        link: "https://aaron-underhill.github.io/job-search-agent/",
+
+        external: true,
+
+        github: "https://github.com/aaron-underhill/job-search-agent"
+    },
+
+
+    {
         title: "Biketown Alert",
 
         featured: false,
